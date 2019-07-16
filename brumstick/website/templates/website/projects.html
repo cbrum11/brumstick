@@ -1,0 +1,110 @@
+{% extends 'bs4.html' %}
+{% block content %}
+{% load static %}
+
+{% block extrastyle %}
+<link rel="stylesheet" href="{% static '/css/custom.css' %}">
+{% endblock extrastyle %}
+
+<!-- Begin project content -->
+{% include 'navbar.html' %}
+{% for project in projects %}
+<div class="container">
+
+  {% if project.show_in_list == True %}
+  <div class="row mb-5 justify-content-center">
+    <div class="col-10">
+      <div class="card shadow">
+        <img class="card-img-top">
+        <div class="card-body ml-5 mr-5">
+          <h1><a href="/projects/{{project.id}}/">{{ project.title }}</a></h1>
+          <div class="mb-2">{{ project.abstract }}</div>
+          <div class="row mb-3 d-flex flex-wrap align-items-center">
+            <div class="col-12 col-lg-6 order-last order-lg-first">
+              {% if project.part1_link != "" %}
+              <hr />
+              <p>
+                <a class='h4' href="{{ project.part1_link }}">{{project.part1_title}}</a>
+              </p>
+              <hr />
+              {% endif %}
+
+              {% if project.part2_link != "" %}
+              <p>
+                <a class='h4' href="{{ project.part2_link }}">{{project.part2_title}}</a>
+              </p>
+              <hr />
+              {% endif %}
+
+              {% if project.part3_link != "" %}
+              <p>
+                <a class='h4' href="{{ project.part3_link }}">{{project.part3_title}}</a>
+              </p>
+              <hr />
+              {% endif %}
+
+              {% if project.part4_link != "" %}
+              <p>
+                <a class='h4' href="{{ project.part4_link }}">{{project.part4_title}}</a>
+              </p>
+              <hr />
+              {% endif %}
+
+              {% if project.part5_link != "" %}
+              <p>
+                <a class='h4' href="{{ project.part5_link }}">{{project.part5_title}}</a>
+              </p>
+              <hr />
+              {% endif %}
+
+              {% if project.part6_link != "" %}
+              <p>
+                <a class='h4' href="{{ project.part6_link }}">{{project.part6_title}}</a>
+              </p>
+              <hr />
+              {% endif %}
+
+              {% if project.part7_link != "" %}
+              <p>
+                <a class='h4' href="{{ project.part7_link }}">{{project.part7_title}}</a>
+              </p>
+              <hr />
+              {% endif %}
+
+              {% if project.part8_link != "" %}
+              <p>
+                <a class='h4' href="{{ project.part8_link }}">{{project.part8_title}}</a>
+              </p>
+              <hr />
+              {% endif %}
+
+              {% if project.part9_link != "" %}
+              <p>
+                <a class='h4' href="{{ project.part9_link }}">{{project.part9_title}}</a>
+              </p>
+              <hr />
+              {% endif %}
+
+              {% if project.part10_link != "" %}
+              <p>
+                <a class='h4' href="{{ project.part10_link }}">{{project.part10_title}}</a>
+              </p>
+              <hr />
+              {% endif %}
+            </div>
+            {% if project.main_image.url != "" %}
+            <div class="mt-3 col-12 col-lg-6 order-first order-lg-last justify-content-center"><img
+                class="card shadow p-1  bg-white rounded" style="width:100%;" src="{{ project.main_image.url }}"
+                alt="test"></div>
+            {% endif %}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  {% endif %}
+</div>
+
+{% endfor %}
+
+{% endblock content %}

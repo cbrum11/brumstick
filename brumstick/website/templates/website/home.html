@@ -1,0 +1,62 @@
+{% extends 'bs4.html' %}
+{% load static %}
+
+{% block extrastyle %}
+<link rel="stylesheet" href="{% static 'website/home.css' %}" type="text/css">
+{% endblock extrastyle %}
+
+{% block content %}
+<!--START BUFFER-->
+<div class="container">
+  <div class="row top-buffer">
+    <div class="col">
+    </div>
+  </div>
+  <!-- END BUFFER -->
+
+  <!--Main Content-->
+  <div class="row">
+    <div class="col-1">
+    </div>
+    <div class="col-md-4 col-xs-12">
+      <img src="{% static 'website/profile-square.png' %}" alt="Chase Brumfield" class="circle img-fluid">
+      <div class="mx-auto">
+        <a href="#"><img src="{% static 'website/github-icon.png'  %}" class="social-icons" alt="github-icon"></a>
+        <a href="#"><img src="{% static 'website/linkedin-icon.png' %}" class="social-icons" alt="github-icon"></a>
+      </div>
+    </div>
+    <div class="col-md-6 col-xs-12">
+      <h1>Howdy.</h1>
+      <h2>Musings from the number prairie by a novice data wrangler.</h2>
+      <p class="mt-3">01010011 01101011 01111001 00100111 01110011 00100000 01101111 01110101 01110100
+        00100000 01110100 01101000 01101001 01100111 01101000 01110011 00100000 01101111 01110101 01110100
+      </p>
+    </div>
+  </div>
+</div>
+
+<!-- NavBar -->
+<div class="container">
+  <div class="row">
+    <div class="col-md-5">
+
+    </div>
+    <div class="col-md-6 col-xs-8">
+      <ul class="nav justify-content-start">
+        <li class="nav-item">
+          <a class="nav-text" href="{% url 'website-home' %}">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-text ml-4" href="{% url 'website-about' %}">About</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-text ml-4" href="{% url 'website-projects' %}">Projects</a>
+        </li>
+        <li class="nav-item ml-4">
+          <a class="nav-text" href="{% url 'blog-home' %}">Blog</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+{% endblock content %}

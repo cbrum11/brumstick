@@ -1,0 +1,39 @@
+h1 {
+  font-family: 'raleway-semibold',sans-serif;
+  font-size: 10px;
+  font-weight: 'semi-bold';
+  color: black;
+}
+
+p {
+  font-family: 'raleway',sans-serif;
+  font-size: 20px;
+  line-height: 1.5em !important;
+  color:rgb(73, 73, 73);
+}
+
+.border{
+  border-color:darkgray;
+  border-style: 1;
+}
+
+@media only screen and (min-width: 768px) {
+  .top-buffer {
+    height: 25vh;
+  }
+}
+
+@media only screen and (min-width: 992px) {
+  a.nav-text{
+    font-size: 25px;
+  }
+  h1{
+    font-size: 50px;
+  }
+  h2{
+    font-size: 30px;
+  }
+  .circle{
+    width:250px;
+  }
+}

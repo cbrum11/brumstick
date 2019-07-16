@@ -1,0 +1,27 @@
+{% extends 'bs4.html' %}
+{% block content %}
+{% load static %}
+
+{% block extrastyle %}
+<link rel="stylesheet" href="{% static '/css/custom.css' %}" />
+{% endblock extrastyle %}
+
+<!-- Begin post content -->
+{% include 'navbar.html' %}
+<div class="container">
+
+    {% for post in posts %}
+    <div class="row mb-5 justify-content-center">
+        <div class="col-10">
+            <div class="card shadow">
+                <img class="card-img-top">
+                <div class="card-body ml-5 mr-5">
+                    <h1><a href="/blog/post/{{post.id}}/">{{ post.title }}</a></h1>
+                    <p> {{ post.abstract }}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+{% endblock content %}
+</div>  

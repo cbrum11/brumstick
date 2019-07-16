@@ -1,0 +1,30 @@
+{% extends 'bs4.html' %}
+{% load static %}
+
+
+<!-- Load Jupyter Notebook stylesheets/scripts -->
+{% block extrastyle %}
+<script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-MML-AM_CHTML' async></script>
+<link rel="stylesheet" href="{% static '/css/custom.css' %}" />
+{% if object.has_jupyter %}
+<link rel="stylesheet" href="{% static 'website/jupyter.css' %}">
+{% endif %}
+{% endblock extrastyle %}
+
+
+{% block content %}
+
+<!-- Begin detail project content -->
+{% include 'navbar.html' %}
+<div class='container shadow'>
+    <div class="row">
+        <div class="col-1"></div>
+        <div class="col-10 mt-5">
+            <h1>{{ object.title }}</h1>
+            <p>{{ object.content | safe }}</p>
+        </div>
+        <div class="col-1"></div>
+    </div>
+</div>
+
+{% endblock content %}
